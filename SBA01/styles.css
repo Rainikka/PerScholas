@@ -1,0 +1,66 @@
+.wrapper {
+  margin: 2;
+  padding: 0;
+  width: auto;
+  order: 3px solid fuchsia;
+  position: relative;
+  z-ndex: -1;
+}
+#backgroundImage {
+  margin: auto;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("images/underlay.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  border: 3px solid white;
+}
+#overlay {
+  margin: auto;
+  width: 100vw;
+  height: 100vh;
+  padding: 20px;
+  background: rgba(28, 28, 132, 0.4);
+  border: 2px dotted lime;
+  place-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+}
+#page1Wrapper {
+  width: 100vw;
+  height: 600px;
+  display: flex;
+}
+#page1Header {
+  margin: 5px;
+  width: 100vw;
+  height: 600px;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
+#photoFrame {
+  width: 185px;
+  height: 215px;
+  border-radius: 50%;
+  background: #bbb;
+}
+#namePlate {
+  margin: 2px 0;
+  font-family: Audrey, Arial, Helvetica, sans-serif;
+  font-size: 40px;
+  letter-spacing: 3px;
+}
+#gridWrap {
+  display: grid;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  padding: 5px;
+  border: 3px solid navy;
+}
