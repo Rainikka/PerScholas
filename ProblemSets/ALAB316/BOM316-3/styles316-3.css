@@ -1,0 +1,60 @@
+
+body {
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+span {
+  font-style: italic;
+  font-family: 'Times New Roman', Times, serif;
+  color: purple;
+}
+
+#container {
+  margin: 0 auto;
+  padding: 10px;
+  width: 100vw;
+  height: 100vh;
+  border: 2px solid blue;
+}
+
+table {
+  margin: 0 auto;
+  width: auto;
+  height: auto;
+  border: 1px dashed red;
+  border-collapse: collapse;
+  border-spacing: 20px;
+}
+
+td {
+  width: auto;
+  height: auto;
+  text-align:  center;
+}
+
+#row1 {
+  padding: 0;
+}
+
+#row2 {
+  margin: 10px auto;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#frameA {
+  padding-right: 10px;
+}
+
+#frameB {
+  padding-left: 8px;
+}
+
+.photos {
+  border: 2px solid #333333;
+}
+
+
+
