@@ -7,7 +7,7 @@
 /******************************/
 /********* JavaScript *********/
 /******* Fundamentals *********/
-/******** 23-MAR-2025 *********/
+/******** 26-MAR-2025 *********/
 
 /******* CodeSandbox Information *********/
 
@@ -92,36 +92,109 @@ const LearnerSubmissions = [
 /*** Your goal is to analyze and transform this data such that the output of your program
  *** is an array of objects, each containing the following information in the following format:
  *
- * the ID of the learner for which this data has been collected "id": number,
- * the learner’s total, weighted average, in which assignments with more points_possible should be counted for more
+ * 1. the ID of the learner for which this data has been collected "id": number,
+ * 2. the learner’s total, weighted average, in which assignments with more points_possible should be counted for more
  * e.g. a learner with 50/100 on one assignment and 190/200 on another would have a weighted average score of 240/300 = 80%."avg":
  * each assignment should have a key with its ID, and the value associated with it should be the percentage that
  * the learner scored on the assignment (submission.score / points_possible) <assignment_id>: number,
  * if an assignment is not yet due, it should not be included in either the average or the keyed dictionary of scores
  *
- * Create a function named getLearnerData() that accepts these values as parameters, in the order listed:
+ * 3. Create a function named getLearnerData() that accepts these values as parameters, in the order listed:
  * (CourseInfo, AssignmentGroup, [LearnerSubmission]), and returns formatted result, which should be an array of objects.
 ****/
 
-// My object
-const nieto = {
-  label: "Title",
-  value: "Ramones"
-}
+/** Learner Id
+ * Total Weighted Average
+ * Number of Assignments
+ * Total Possible Points of All Assignments
+ * 
+ * Each Assignment: Key: Assignment Id, Value: Learner Score
+ * Total Possible Points for Each Assignment
+ * Assignment Due Date
+ * 
 
-let nietos = [];
-let obj = {};
-obj["id"] = nieto.label;
-obj["name"] = nieto.value;
-nietos.push(obj);
+/***
+ * Course Information
+ * Number of Assignments
+ * List of All Assignments
+ * Total Possible Points
+ * Total Possible Points to Date
+ * 
+ * ***/
+/*** 
+  * 3. Create a function named getLearnerData() that accepts these values as parameters, in the order listed:
+ * (CourseInfo, AssignmentGroup, [LearnerSubmission]), and returns formatted result, which should be an array of objects.
+****/
 
-console.log(nietos);
-
-/*** Learner Id & Name ***/
+console.log(`\n/*** Course Id & Name ***/`)
+/*** Course Id & Name ***/
 let courseIdentity = {};
 courseIdentity["id"] = CourseInfo.id;
 courseIdentity["name"] = CourseInfo.name;
-// courseIdentity.push(courseObject);
 console.log(courseIdentity);
+
+console.log(`\n/*** Assignment Group Id & Name ***/`)
+/*** Assignment Group Id & Name ***/
+let groupIdentity = {};
+groupIdentity["id"] = AssignmentGroup.id;
+groupIdentity["name"] = AssignmentGroup.name;
+console.log(groupIdentity);
+
+console.log(`\n/*** Student Assignment Scores ***/`)
+/******* Student Scores *********/
+let studentScores = {);
+studentScores["studentId"] = submission.learner_id;
+studentScores["assignId"] = submission.assignment_id;
+studentScores["assignmentScore"] = submission.submission.score;
+console.log(studentScores);
+
+// console.log(`\n/*** All Group Assignment Info ***/`)
+// /*** All Group Assignment Info ***/
+// let assignGroup = (AssignmentGroup.assignments)
+// console.log(assignGroup);
+
+function assignByDueDate(assignGroup) {
+  return AssignmentGroup.assignments.filter(assignment => {
+    /*** Knowledge Inspiration: MDN: Date Constructors ***/
+    let dateDue = Date.parse(assignment.due_at);
+    return dateDue < Date.now();
+  });
+}
+console.log(assignByDueDate(AssignmentGroup));
+
+
+
+// Name & Id of each Assignment
+function assignId(group) {
+  return group.assignments.map(({ id, name }) => ({ id, name }));
+}
+
+// Assign  Total Points
+
+// Sort Group Assignment By Due Date
+
+
+/** Filter Course */
+
+
+
+/***
+ * Assignment Information
+   * Name an Id of Each Assignment
+     * Assignment Possible Points
+       * Weight of Each Assignment
+         * Due Date of Assignment
+           *
+* Learner Information
+ * Learner Id
+   * Each Assignment earned Points
+     *
+***/
+
+/**Create a function named getLearnerData() that accepts these values as parameters, in the order listed:
+ * (CourseInfo, AssignmentGroup, [LearnerSubmission]), and returns formatted result, which should be an array of objects. **/
+
+
+
 
 
